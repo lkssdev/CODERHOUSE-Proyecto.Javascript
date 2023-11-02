@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.centralizador {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedorEventos {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+
+.event {
+  border-radius: 7px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+  height: 40vh;
+  width: 85%;
+  margin: 10%;
+  overflow: hidden;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.event:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.event img {
+  border-radius: 7px 7px 0 0;
+  height: 18vh;
+  width: 100%;
+  transition: 0.7s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+}
+
+.event img:hover {
+  scale: 105%;
+}
+
+.event h2 {
+  margin: 5% 5%;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.event p {
+  margin: 2% 9%;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.event a {
+  display: flex;
+  justify-content: center;
+  margin-top: 13%;
+  padding: 10px;
+  border-radius: 0 0 7px 7px;
+  background-color: rgb(110, 6, 110);
+  text-decoration: none;
+  color: #fff;
+}
+
+hr {
+  width: 90%;
+  margin: 0 auto;
+  border-color: rgba(110, 6, 110, 0.2);
+}
+
+.contenedorCalendario {
+  position: fixed;
+  margin: 1.7% 0 0 1.4%;
+}
+
+.contenedorCalendario h3 {
+  margin: 5% 0;
+}
+
+.contenedorFiltros {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  margin: 17% 0 0 0.4%;
+}
+
+.contenedorFiltros h3 {
+  margin: 20% 0 5% 10%;
+}
+
+.filtros {
+  display: flex;
+  margin: 5px 0;
+}
+
+.filtros input {
+  flex: 1;
+}
+
+.filtros label {
+  flex: 2;
+  border-radius: 10px;
+  padding: 3px 3px 3px 9px;
+  font-size: 0.9rem;
+  background-color: rgb(110, 6, 110);
+  color: #fff;
+}/*# sourceMappingURL=main.css.map */
