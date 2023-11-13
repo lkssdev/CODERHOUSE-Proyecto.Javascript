@@ -1,5 +1,4 @@
-const eventsData = [
-    {
+const eventsData = [{
         image: "../media/images/evento-cultural2.jpg",
         title: "Fiesta del Tannat",
         description: "Plaza 18 de Julio de Canelones",
@@ -23,7 +22,7 @@ const eventsData = [
         description: "Jose Enrique Rodó 1773",
         date: "Miércoles 1/11 - 22:30 hs",
         price: "$250",
-        link: "../eventos/plantilla.html", 
+        link: "../eventos/plantilla.html",
         tags: ["fiesta"]
     },
     {
@@ -41,7 +40,7 @@ const eventsData = [
         description: "Parador Roosevelt",
         date: "Domingo 5/11 - 13:00 hs",
         price: "Entrada libre",
-        link: "../eventos/plantilla.html" ,
+        link: "../eventos/plantilla.html",
         tags: ["eventos-culturales"]
     },
     {
@@ -78,7 +77,7 @@ const eventsData = [
         date: "Sabado 18/11 - 19:00 hs",
         price: "Desde $385",
         link: "../eventos/plantilla.html",
-        tags: ["deportes"] 
+        tags: ["deportes"]
     },
     {
         image: "../media/images/fiesta4.jpg",
@@ -87,7 +86,7 @@ const eventsData = [
         date: "Miercoles 1/11 - 23:55 hs",
         price: "$800",
         link: "../eventos/plantilla.html",
-        tags: ["fiesta"] 
+        tags: ["fiesta"]
     },
     {
         image: "../media/images/teatro4.jpg",
@@ -158,11 +157,17 @@ document.addEventListener("DOMContentLoaded", function () {
         eventClone.querySelector(".event-date").textContent = eventData.date;
         eventClone.querySelector(".event-price").textContent = eventData.price;
 
-        const eventImage = eventClone.querySelector(".event-image");
-        eventImage.src = eventData.image;
+        //PRUEBA SRC
+        eventClone.querySelector(".event-image").src = eventData.image;
 
-        const eventLink = eventClone.querySelector(".event-link");
-        eventLink.href = eventData.link;
+        /*         const eventImage = eventClone.querySelector(".event-image");
+                eventImage.src = eventData.image; */
+
+        //PRUEBA HREF
+        eventClone.querySelector(".event-link").href = eventData.link;
+
+        /*         const eventLink = eventClone.querySelector(".event-link");
+                eventLink.href = eventData.link; */
 
         eventList.appendChild(eventClone);
     });
@@ -187,16 +192,24 @@ document.addEventListener("DOMContentLoaded", function () {
             if (selectedTags.every(tag => eventData.tags.includes(tag))) {
                 const eventClone = document.importNode(eventTemplate.content, true);
 
+
+
                 eventClone.querySelector(".event-title").textContent = eventData.title;
                 eventClone.querySelector(".event-description").textContent = eventData.description;
                 eventClone.querySelector(".event-date").textContent = eventData.date;
                 eventClone.querySelector(".event-price").textContent = eventData.price;
 
-                const eventImage = eventClone.querySelector(".event-image");
-                eventImage.src = eventData.image;
+                //PRUEBA SRC
+                eventClone.querySelector(".event-image").src = eventData.image;
 
-                const eventLink = eventClone.querySelector(".event-link");
-                eventLink.href = eventData.link;
+                /*         const eventImage = eventClone.querySelector(".event-image");
+                        eventImage.src = eventData.image; */
+
+                //PRUEBA HREF
+                eventClone.querySelector(".event-link").href = eventData.link;
+
+                /*         const eventLink = eventClone.querySelector(".event-link");
+                        eventLink.href = eventData.link; */
 
                 eventList.appendChild(eventClone);
             }
@@ -206,4 +219,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateEvents();
 });
-
