@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
             elemento.style.transform = `translateX(${-indice * 100}%)`;
         });
 
-        // Actualizar la apariencia de los botones al cambiar automáticamente
+
         botonesCarrusel.forEach((boton, index) => {
             boton.classList.remove('activo');
             if (index === indice) {
