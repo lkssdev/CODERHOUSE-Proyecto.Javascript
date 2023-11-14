@@ -156,18 +156,8 @@ document.addEventListener("DOMContentLoaded", function () {
         eventClone.querySelector(".event-description").textContent = eventData.description;
         eventClone.querySelector(".event-date").textContent = eventData.date;
         eventClone.querySelector(".event-price").textContent = eventData.price;
-
-        //PRUEBA SRC
         eventClone.querySelector(".event-image").src = eventData.image;
-
-        /*         const eventImage = eventClone.querySelector(".event-image");
-                eventImage.src = eventData.image; */
-
-        //PRUEBA HREF
         eventClone.querySelector(".event-link").href = eventData.link;
-
-        /*         const eventLink = eventClone.querySelector(".event-link");
-                eventLink.href = eventData.link; */
 
         eventList.appendChild(eventClone);
     });
@@ -192,24 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
             if (selectedTags.every(tag => eventData.tags.includes(tag))) {
                 const eventClone = document.importNode(eventTemplate.content, true);
 
-
-
                 eventClone.querySelector(".event-title").textContent = eventData.title;
                 eventClone.querySelector(".event-description").textContent = eventData.description;
                 eventClone.querySelector(".event-date").textContent = eventData.date;
                 eventClone.querySelector(".event-price").textContent = eventData.price;
-
-                //PRUEBA SRC
                 eventClone.querySelector(".event-image").src = eventData.image;
-
-                /*         const eventImage = eventClone.querySelector(".event-image");
-                        eventImage.src = eventData.image; */
-
-                //PRUEBA HREF
                 eventClone.querySelector(".event-link").href = eventData.link;
-
-                /*         const eventLink = eventClone.querySelector(".event-link");
-                        eventLink.href = eventData.link; */
 
                 eventList.appendChild(eventClone);
             }
@@ -219,3 +197,110 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateEvents();
 });
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const carrusel = document.querySelector('.carrusel');
+    const elementosCarrusel = document.querySelectorAll('.elementoCarrusel');
+    const botonesCarrusel = document.querySelectorAll('.boton-carrusel');
+
+    let indice = 0;
+
+    function mostrarElemento() {
+        elementosCarrusel.forEach(elemento => {
+            elemento.style.transform = `translateX(${-indice * 100}%)`;
+        });
+
+        // Actualizar la apariencia de los botones al cambiar automáticamente
+        botonesCarrusel.forEach((boton, index) => {
+            boton.classList.remove('activo');
+            if (index === indice) {
+                boton.classList.add('activo');
+            }
+        });
+    }
+
+    function cambiarSlide(nuevoIndice) {
+        indice = nuevoIndice;
+        mostrarElemento();
+    }
+
+    function avanzar() {
+        indice++;
+        if (indice >= elementosCarrusel.length) {
+            indice = 0;
+        }
+        mostrarElemento();
+    }
+
+    function retroceder() {
+        indice--;
+        if (indice < 0) {
+            indice = elementosCarrusel.length - 1;
+        }
+        mostrarElemento();
+    }
+
+    setInterval(avanzar, 5000);
+
+    botonesCarrusel.forEach((boton, index) => {
+        boton.addEventListener('click', function () {
+            cambiarSlide(index);
+        });
+    });
+});
+
+/* const carouselsData = [{
+    image: "../media/images/evento-cultural2.jpg",
+    title: "Fiesta del Tannat",
+    desc: "Plaza 18 de Julio de Canelones",
+    link: "../eventos/plantilla.html",
+    tags: ["eventos-culturales"]
+},
+{
+    image: "../media/images/teatro1.png",
+    title: "La obra que sale mal",
+    desc: "Juan Luis Granato y Pablo Dive",
+    link: "../eventos/plantilla.html",
+    tags: ["teatro"]
+},
+{
+    image: "../media/images/fiesta3.jpg",
+    title: "Viejo Barreiro",
+    desc: "Jose Enrique Rodó 1773",
+    link: "../eventos/plantilla.html",
+    tags: ["fiesta"]
+},
+{
+    image: "../media/images/stand-up1.jpg",
+    title: "German Medina es inseguro",
+    desc: "Centro Cultural Nacional AFE",
+    link: "../eventos/plantilla.html",
+    tags: ["stand-up"]
+},
+{
+    image: "../media/images/evento-cultural1.jpg",
+    title: "Festival Cultural de la Tierra",
+    desc: "Parador Roosevelt",
+    link: "../eventos/plantilla.html",
+    tags: ["eventos-culturales"]
+},
+];
+
+document.addEventListener("DOMContentLoaded", function () {
+    const carouselList = document.getElementById("carousel-list");
+    const carouselTemplate = document.getElementById("carousel-template");
+
+    carouselsData.forEach((carouselData) => {
+        const carouselClone = document.importNode(carouselTemplate.content, true);
+
+        carouselClone.querySelector(".element-title").textContent = carouselData.title;
+        carouselClone.querySelector(".element-desc").textContent = carouselData.desc;
+        carouselClone.querySelector(".element-image").src = carouselData.image;
+        carouselClone.querySelector(".element-link").href = carouselData.link;
+
+        carouselList.appendChild(carouselClone);
+    });
+
+    updateEvents();
+}); */

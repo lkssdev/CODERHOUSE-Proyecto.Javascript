@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>+Eventos</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
     <main>
 
-        <div class="contenedorCalendario">
-            <h3>Proximas fechas</h3>
-            <iframe src="https://calendar.google.com/calendar/embed?height=250&wkst=2&bgcolor=%23ffffff&ctz=America%2FMontevideo&showTitle=0&showNav=0&showDate=0&showTz=0&showCalendars=0&showTabs=0&showPrint=0&mode=MONTH&src=YzJmMWRiN2JiYzkwNmJmZmZiYjliZTVlMjMyNWJiYWNjMDFkOWY3OGY3NTU0ODVjYWUzN2RmZjNjMWM0ZGE5YkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%238E24AA" style="border-width:0" width="250" height="250" frameborder="0" scrolling="no"></iframe>
+        <div class="carrusel">
+            <div class="elementoCarrusel">
+                <div class="contenidoElemento">
+                    <div class="elementoImg">
+                        <img src="./media/images/fiesta3.jpg" alt="">
+                    </div>
+                    <div class="elementoData">
+                        <h1>VIEJO BARREIRO</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere quae a qui labore corporis
+                            mollitia aspernatur distinctio voluptas sed dolorum.</p>
+                        <a href="#">Ver Mas</a>
+                    </div>
+                </div>
+            </div>
+            <div class="elementoCarrusel">
+                <div class="contenidoElemento">
+                    <div class="elementoImg">
+                        <img src="./media/images/fiesta1.jpg" alt="">
+                    </div>
+                    <div class="elementoData">
+                        <h1>SOHO</h1>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere quae a qui labore corporis
+                            mollitia aspernatur distinctio voluptas sed dolorum.</p>
+                        <a href="#">Ver Mas</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="botones-carrusel">
+                <button class="boton-carrusel" onclick="cambiarSlide(0)"></button>
+                <button class="boton-carrusel" onclick="cambiarSlide(1)"></button>
+<!--                 <button class="boton-carrusel" onclick="cambiarSlide(2)"></button>
+                <button class="boton-carrusel" onclick="cambiarSlide(3)"></button>
+                <button class="boton-carrusel" onclick="cambiarSlide(4)"></button> -->
+            </div>
+            
         </div>
         
-        <div class="contenedorFiltros">
-            <h3>Filtrar por categorias</h3>
-            <div class="filtros">
-                <input type="checkbox" id="fiesta">
-                <label for="fiesta" class="checkbox-button">Fiesta</label>
-            </div>
-            <div class="filtros">
-                <input type="checkbox" id="musica">
-                <label for="musica" class="checkbox-button"> Musica</label>
-            </div>
-            <div class="filtros">
-                <input type="checkbox" id="teatro">
-                <label for="teatro" class="checkbox-button"> Teatro</label>
-            </div>
-            <div class="filtros">
-                <input type="checkbox" id="deportes">
-                <label for="deportes" class="checkbox-button"> Deportes</label>
-            </div>
-            <div class="filtros">
-                <input type="checkbox" id="stand-up">
-                <label for="stand-up" class="checkbox-button"> Stand Up</label>
-            </div>
-            <div class="filtros">
-                <input type="checkbox" id="eventos-culturales">
-                <label for="eventos-culturales" class="checkbox-button"> Eventos Culturales</label>
-            </div>
-        </div>
+
+
+
+
 
         <div class="centralizador">
+            <div class="contenedorFiltros">
+                <h3>Filtrar por categorias</h3>
+                <div class="filtros">
+                    <input type="checkbox" id="fiesta">
+                    <label for="fiesta" class="checkbox-button">Fiesta</label>
+                </div>
+                <div class="filtros">
+                    <input type="checkbox" id="musica">
+                    <label for="musica" class="checkbox-button"> Musica</label>
+                </div>
+                <div class="filtros">
+                    <input type="checkbox" id="teatro">
+                    <label for="teatro" class="checkbox-button"> Teatro</label>
+                </div>
+                <div class="filtros">
+                    <input type="checkbox" id="deportes">
+                    <label for="deportes" class="checkbox-button"> Deportes</label>
+                </div>
+                <div class="filtros">
+                    <input type="checkbox" id="stand-up">
+                    <label for="stand-up" class="checkbox-button"> Stand Up</label>
+                </div>
+                <div class="filtros">
+                    <input type="checkbox" id="eventos-culturales">
+                    <label for="eventos-culturales" class="checkbox-button"> Eventos Culturales</label>
+                </div>
+            </div>
             <div class="contenedorEventos" id="event-list">
                 <template id="event-template">
                     <div class="event">
@@ -62,4 +101,5 @@
 
     <script src="./js/main.js"></script>
 </body>
+
 </html>
