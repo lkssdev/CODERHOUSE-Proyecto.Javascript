@@ -1,7 +1,62 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "DM Serif Text", serif;
+}
+
+.header-top {
+  display: flex;
+  background-color: rgb(110, 6, 110);
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-top img {
+  height: 70px;
+}
+
+.header {
+  display: flex;
+  background-color: rgb(110, 6, 110);
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  transition: background-color 1s ease;
+}
+
+.header.scroll {
+  background-color: rgba(110, 6, 110, 0.8);
+}
+
+.navegacion {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navegacion a {
+  cursor: pointer;
+  transition: 0.5s;
+  color: #fff;
+  padding: 6px;
+  font-size: 1.3rem;
+}
+
+.navegacion a:hover {
+  color: rgb(110, 6, 110);
+  text-shadow: 1px 0px 0px #fff, 0px 1px 0px #fff, -1px 0px 0px #fff, 0px -1px 0px #fff;
 }
 
 .centralizador {
@@ -18,6 +73,7 @@
   justify-items: center;
   align-items: center;
   margin-left: 17px;
+  margin-top: 3%;
 }
 
 .event {
@@ -29,6 +85,7 @@
   overflow: hidden;
   text-align: center;
   transition: 0.3s;
+  position: relative;
 }
 
 .event:hover {
@@ -63,7 +120,9 @@
 .event a {
   display: flex;
   justify-content: center;
-  margin-top: 13%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   padding: 10px;
   border-radius: 0 0 7px 7px;
   background-color: rgb(110, 6, 110);
@@ -71,7 +130,7 @@
   color: #fff;
 }
 
-hr {
+.event hr {
   width: 90%;
   margin: 0 auto;
   border-color: rgba(110, 6, 110, 0.2);
@@ -82,11 +141,11 @@ hr {
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: 1%;
+  top: 33%;
 }
 
 .contenedorFiltros h3 {
-  margin: 18% 0 5% 10%;
+  margin: 45% 0 5% 10%;
 }
 
 .filtros {
@@ -107,6 +166,18 @@ hr {
   color: #fff;
 }
 
+.line {
+  position: absolute;
+  font-size: 30rem;
+  border-color: rgb(110, 6, 110);
+  background-color: rgb(110, 6, 110);
+  top: 28.5%;
+  left: 10%;
+  width: 80%;
+  height: 1.5%;
+  border-radius: 10px 0 0 0;
+}
+
 .carrusel {
   display: flex;
   overflow: hidden;
@@ -122,36 +193,37 @@ hr {
 .contenidoElemento {
   display: flex;
   height: 60vh;
-  box-shadow: 0 -9px 0 rgb(110, 6, 110);
-  border-radius: 10px 0 0 0;
-  margin: 10%;
+  margin: 6.3% 10%;
   overflow: hidden;
   transition: transform 0.5s ease-in-out;
+  width: 80%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 10px 0;
+  position: relative;
 }
 
-.elementoImg {
+.imagen-carrusel {
   display: flex;
   justify-content: start;
-  width: 38%;
-}
-
-.elementoImg img {
+  width: 70%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.imagen-carrusel img {
   width: 100%;
   height: 100%;
-  box-shadow: 8px -10px 9px rgba(0, 0, 0, 0.4);
 }
 
 .elementoData {
-  width: 40%;
-  height: 60%;
-  box-shadow: 2px 10px 11px rgba(0, 0, 0, 0.4);
+  width: 30%;
+  height: 100%;
   background-color: #fff;
   border-radius: 0 0 10px 0;
 }
 
-.elementoData h1 {
+.elementoData h2 {
+  margin-top: 6%;
   font-size: 3rem;
   padding: 2rem;
 }
@@ -162,10 +234,15 @@ hr {
 }
 
 .elementoData a {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   display: flex;
   justify-content: center;
-  margin-top: 16.2%;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 70%;
+  width: 30%;
+  height: 10%;
   padding: 10px;
   border-radius: 0 0 10px 0;
   background-color: rgb(110, 6, 110);
@@ -176,7 +253,7 @@ hr {
 
 .botones-carrusel {
   position: absolute;
-  top: 20.3%;
+  top: 29.9%;
   left: 77.31%;
   display: flex;
 }
@@ -193,4 +270,283 @@ hr {
 .boton-carrusel.activo {
   transform: scaleY(1.5);
   background-color: rgb(110, 6, 110);
+}
+
+footer {
+  margin-top: 2%;
+  display: flex;
+  width: auto;
+  height: 100px;
+  background-color: rgb(110, 6, 110);
+}
+
+.contenedorCompras {
+  display: flex;
+  padding: 2% 5%;
+}
+
+.contenedorCompras hr {
+  border: none;
+  border-top: 2px solid rgb(82, 5, 82);
+  margin-bottom: 10px;
+}
+
+.contenedor-tickets {
+  width: 65%;
+  height: 50vh;
+  background-color: rgb(110, 6, 110);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 15px;
+}
+
+.contenedor-tickets ul {
+  background-color: rgb(100, 6, 100);
+  height: 70px;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.tickets {
+  display: flex;
+  flex-direction: column;
+  margin-left: 7%;
+  width: 40%;
+}
+
+.ticket {
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.valores {
+  position: absolute;
+  top: 38%;
+  left: 53%;
+  transform: translate(-50%, -50%);
+}
+
+.valor {
+  color: #fff;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: 62px;
+}
+
+select {
+  outline: none;
+  border: 0;
+  font-size: 1rem;
+  flex: 1;
+  padding: 0 1.1rem;
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-image: none;
+  cursor: pointer;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 100px;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+}
+
+.select::after {
+  content: "▼";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.select:hover::after {
+  color: rgb(110, 6, 110);
+}
+
+.select:focus-within {
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.8);
+}
+
+select option {
+  background-color: rgba(200, 200, 200, 0.8);
+  color: #333;
+}
+
+.cantidad-tickets {
+  position: absolute;
+  top: 27%;
+  left: 84%;
+  transform: translate(-50%, -50%);
+}
+
+.agotado {
+  position: relative;
+  display: flex;
+  width: 170px;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.5);
+  text-decoration: line-through;
+}
+
+.agotado::after {
+  content: "▼";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: rgb(255, 255, 255);
+  transition: 0.25s all ease;
+  pointer-events: none;
+}
+
+.agotado:hover::after {
+  color: red;
+}
+
+.agotado:focus-within {
+  box-shadow: 0 0 7px rgba(255, 255, 255, 0.8);
+}
+
+.agotado option {
+  background-color: rgba(200, 200, 200, 0.8);
+  color: #333;
+}
+
+.tickets-agotados {
+  position: absolute;
+  top: 45%;
+  left: 81%;
+  transform: translate(-50%, -50%);
+}
+
+#evento-especifico {
+  width: 35%;
+  height: 50vh;
+  border: 5px solid rgb(100, 6, 100);
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+}
+
+.evento {
+  height: 100%;
+  text-align: center;
+  justify-content: center;
+  padding: 1%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.titulo {
+  color: black;
+  font-size: 2rem;
+  justify-content: center;
+  text-align: center;
+  padding: 1%;
+}
+
+.imagen {
+  margin-top: 2%;
+  height: 65%;
+}
+
+.lugar {
+  font-size: 1.4rem;
+  padding: 4% 0;
+}
+
+.fecha {
+  font-size: 1.3rem;
+}
+
+.precio {
+  font-size: 1rem;
+}
+
+.generador {
+  text-align: start;
+  justify-content: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+#generateBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+#generateBtn:hover {
+  background-color: rgb(110, 6, 110);
+  border-color: #fff;
+  color: #fff;
+  border-radius: 10px;
+}
+
+#receipt {
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1%;
+}
+#receipt .receipt-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1%;
+}
+#receipt .receipt-image {
+  height: 300px;
+  margin-bottom: 1%;
+}
+#receipt .receipt-qr {
+  margin-top: 2%;
+  width: 200px;
+  margin: 0 auto;
+}
+#receipt .receipt-date {
+  font-size: 1.4rem;
+}
+#receipt .receipt-description {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+#receipt .receipt-ids {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+#receipt .receipt-ids p {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+#returnLink {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 200px;
+}
+
+.rule {
+  margin: 0 auto;
+  width: 25%;
+  border: none;
+  border-top: 2px solid rgba(110, 6, 110, 0.4);
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */

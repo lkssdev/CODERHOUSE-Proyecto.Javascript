@@ -4,22 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantilla</title>
-    <link rel="shortcut icon" href="../media/images/+eventos logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/main.css">
+    <title>Pim Pau</title>
+    <link rel="shortcut icon" href="../../media/images/+eventos logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/main.css">
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 </head>
 <body>
-    <div class="header-top"> <img src="../media/images/+Eventos.png" alt=""></div>
+    <div class="header-top"> <img src="../../media/images/+Eventos.png" alt=""></div>
     <nav class="header">
         <ul class="navegacion">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="../index.html#eventos">Eventos</a></li>
+            <li><a href="../../index.html">Inicio</a></li>
+            <li><a href="../../index.html#eventos">Eventos</a></li>
             <li><a href="#">Contacto</a></li>
         </ul>
     </nav>
     <main>
-        <h1 class="titulo"> Titulo</h1>
+        <h1 class="titulo"> Pim Pau</h1>
         <hr>
         <div class="contenedorCompras">
             <div class="contenedor-tickets">
@@ -31,20 +31,20 @@
                 <hr>
                 <div class="tickets">
                     <div class="ticket">
-                        <h3>Nombre de tipo de ticket</h3>
-                        <p>Especificacions del mismo</p>
+                        <h3>Entrada palco</h3>
+                        <p>Segunda tanda sector palco</p>
                     </div>
                     <div class="ticket">
-                        <h3>Nombre de tipo de ticket</h3>
-                        <p>Especificacions del mismo</p>
+                        <h3>Entrada general</h3>
+                        <p>Primera tanda sector general</p>
                     </div>
                 </div>
                 <div class="valores">
                     <div class="valor">
-                        <h3>$###</h3>
+                        <h3>$1100</h3>
                     </div>
                     <div class="valor">
-                        <h3>$###</h3>
+                        <h3>$700</h3>
                     </div>
                 </div>
                 <div class="cantidad-tickets">
@@ -82,13 +82,13 @@
             <button id="generateBtn">Comprar</button>
             <div id="receipt"></div>
         </div>
-        <a id="returnLink" href="../index.html" style="display: none;">Volver a la Página Principal</a>
+
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
                 const eventList = document.getElementById("evento-especifico");
                 const eventTemplate = document.getElementById("pantilla-evento");
-                const selectedTag = 'd-01';
+                const selectedTag = 't-04';
 
                 eventsData.forEach((eventData) => {
                     if (eventData.tags.includes(selectedTag)) {
@@ -116,7 +116,7 @@
                     if (selectedValue === "0") {
                         alert("Por favor, elige una opción válida antes de comprar.");
                     } else {
-                        const selectedTag = 'd-01';
+                        const selectedTag = 't-04';
                         const selectedEvent = eventsData.find(event => event.tags.includes(
                             selectedTag));
                         generateReceipt(selectedEvent);
@@ -197,7 +197,7 @@
     <footer>
     </footer>
 
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
 
 </body>
 
